@@ -21,6 +21,9 @@ RUN cd zasper && export PATH=/usr/local/go/bin:$PATH && go build -tags webapp -o
  
 # Install sample python env
 RUN apt-get install -y python3-pip 
+RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
+RUN pip config set install.trusted-host mirrors.aliyun.com
+
 RUN pip install jupyter --break-system-packages
 
 # Add user zasper 
