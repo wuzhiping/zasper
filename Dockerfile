@@ -17,7 +17,7 @@ RUN cd zasper && cd ui && npm install react-scripts@0.1.0 && npm audit fix --for
 RUN cd zasper && cd ui && npm run build
 
 # Build go 
-RUN cd zasper && export PATH=/usr/local/go/bin:$PATH && go build -tags webapp && cp zasper /usr/local/bin
+RUN cd zasper && export PATH=/usr/local/go/bin:$PATH && go build -tags webapp -o ui/public/zasper && cp zasper /usr/local/bin
  
 # Install sample python env
 RUN apt-get install -y python3-pip 
