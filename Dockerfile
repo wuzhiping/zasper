@@ -13,7 +13,7 @@ RUN curl -LO https://go.dev/dl/go1.23.4.linux-amd64.tar.gz && rm -rf /usr/local/
 RUN git clone https://github.com/zasper-io/zasper.git 
 
 # Build npm stuff 
-# RUN cd zasper && cd ui && npm install react-scripts@0.1.0 && npm audit fix --force || true
+RUN cd zasper && cd ui && npm install react-scripts@0.1.0 && npm audit fix --force || true
 RUN cd zasper && cd ui && npm run build
 
 # Build go 
